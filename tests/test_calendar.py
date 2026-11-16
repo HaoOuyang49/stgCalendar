@@ -11,11 +11,11 @@ from datetime import datetime, timedelta
 from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
-from solar_term_calendar import (
+from stg_calendar import (
     EstimatedTermConsentRequired, TermPrecisionConsentRequired, calendar_at,
     coverage, day_hour_pillars, get_term, local_clock, resolve_windows_report, terms_for_year,
 )
-from solar_term_calendar import calendar, pmo_terms
+from stg_calendar import calendar, pmo_terms
 
 
 HAS_CALENDAR = importlib.util.find_spec("lunar_python") is not None
@@ -95,7 +95,7 @@ class OfficialTables(unittest.TestCase):
 
     def test_official_query_works_in_a_python_without_site_packages(self):
         root = Path(__file__).resolve().parents[1]
-        code = ("import sys; from solar_term_calendar import get_term; "
+        code = ("import sys; from stg_calendar import get_term; "
                 "assert 'lunar_python' not in sys.modules; "
                 "assert get_term(2026, '立冬')['source']['provider'] == 'pmo'")
         result = subprocess.run([sys.executable, "-S", "-c", code], cwd=root,
@@ -220,7 +220,7 @@ class IntervalMatching(unittest.TestCase):
 
 class JsonCLI(unittest.TestCase):
     def run_cli(self, *args):
-        return subprocess.run([sys.executable, "-m", "solar_term_calendar", *args],
+        return subprocess.run([sys.executable, "-m", "stg_calendar", *args],
                               capture_output=True, text=True, encoding="utf-8",
                               env={**os.environ, "PYTHONIOENCODING": "utf-8"})
 

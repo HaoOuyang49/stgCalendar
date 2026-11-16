@@ -1,4 +1,4 @@
-# solar-term-calendar
+# stgCalendar
 
 独立历法与节气库，来自 MagicDoor 的历法模块；不得依赖 qimen_engine 或私有教材。
 先阅读 README.md、DATA_SOURCES.md 和测试。原创代码采用 MIT，来源出版物与依赖各保留原有条款。

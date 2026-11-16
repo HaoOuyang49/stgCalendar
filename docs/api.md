@@ -26,7 +26,7 @@
 
 ```python
 from datetime import datetime
-from solar_term_calendar import resolve_windows_report
+from stg_calendar import resolve_windows_report
 
 start = datetime.fromisoformat("2025-11-07T12:03:00+08:00")
 end = datetime.fromisoformat("2025-11-07T12:05:00+08:00")
@@ -48,7 +48,7 @@ print(report["windows"][0]["start"])  # 2025-11-07T12:04:00+08:00
 ## 数据版本与更新
 
 `term_data_version` 是已载入节气值及更新版次的 SHA-256 指纹；不等同软件版本。
-`SOLAR_TERM_CALENDAR_UPDATES` 指定可选 JSON 更新文件，默认使用包内空更新表。
+`STG_CALENDAR_UPDATES` 指定可选 JSON 更新文件，默认使用包内空更新表。
 新进程载入已审核更新后，更新优先于原年度表和历史表。
 导入器验证结构而非官方真实性，审核责任仍在数据维护者。
 

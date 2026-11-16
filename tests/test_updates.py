@@ -10,8 +10,8 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
-from solar_term_calendar import pmo_terms, update_terms
-from solar_term_calendar.hko_terms import HKO_TERMS
+from stg_calendar import pmo_terms, update_terms
+from stg_calendar.hko_terms import HKO_TERMS
 
 
 def synthetic_document():
@@ -56,14 +56,14 @@ class AnnualUpdates(unittest.TestCase):
             json.loads('{"terms": {"立春": "a", "立春": "b"}}', object_pairs_hook=pmo_terms.unique_keys)
 
     def test_external_update_is_loaded_with_edition_and_new_fingerprint(self):
-        from solar_term_calendar.calendar import TERM_DATA_VERSION
+        from stg_calendar.calendar import TERM_DATA_VERSION
         with TemporaryDirectory() as directory:
             path = Path(directory) / "updates.json"
             path.write_text(json.dumps({"2027": synthetic_document()}), encoding="utf-8")
-            code = ("import json; from solar_term_calendar import get_term; "
+            code = ("import json; from stg_calendar import get_term; "
                     "print(json.dumps(get_term(2027, '惊蛰')))")
             result = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
-                                    encoding="utf-8", env={**os.environ, "SOLAR_TERM_CALENDAR_UPDATES": str(path)})
+                                    encoding="utf-8", env={**os.environ, "STG_CALENDAR_UPDATES": str(path)})
             self.assertEqual(result.returncode, 0, result.stderr)
             output = json.loads(result.stdout)
             self.assertEqual(output["source"]["provider"], "pmo")
@@ -75,8 +75,8 @@ class AnnualUpdates(unittest.TestCase):
         with TemporaryDirectory() as directory:
             source, output = Path(directory) / "input.json", Path(directory) / "updates.json"
             source.write_text(json.dumps(synthetic_document()), encoding="utf-8")
-            base = [sys.executable, "-m", "solar_term_calendar.update_terms", "2027", str(source)]
-            env = {**os.environ, "SOLAR_TERM_CALENDAR_UPDATES": str(output)}
+            base = [sys.executable, "-m", "stg_calendar.update_terms", "2027", str(source)]
+            env = {**os.environ, "STG_CALENDAR_UPDATES": str(output)}
             preview = subprocess.run(base, env=env, capture_output=True, text=True, encoding="utf-8")
             self.assertEqual(preview.returncode, 0, preview.stderr)
             self.assertFalse(json.loads(preview.stdout)["applied"])

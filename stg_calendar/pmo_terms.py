@@ -102,7 +102,7 @@ def historical_terms():
     return result
 
 
-UPDATE_FILE = Path(environ.get("SOLAR_TERM_CALENDAR_UPDATES", Path(__file__).with_name("pmo_updates.json")))
+UPDATE_FILE = Path(environ.get("STG_CALENDAR_UPDATES", Path(__file__).with_name("pmo_updates.json")))
 JIE_MONTH = {pair[0]: month for month, pair in enumerate(MONTH_TERMS, 1)}
 TERM_MONTH = {name: month for month, pair in enumerate(MONTH_TERMS, 1) for name in pair}
 
