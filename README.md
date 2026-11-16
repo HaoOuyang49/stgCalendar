@@ -44,5 +44,3 @@ print(calendar_at("2026-11-05T14:02:00+08:00")["pillars"])
 
 - [接口、时间约定与数据更新](docs/api.md)
 - [数据来源与覆盖说明](DATA_SOURCES.md)
-- [贡献指南](CONTRIBUTING.md)
-- [问题反馈](https://github.com/HaoOuyang49/stgCalendar/issues)
