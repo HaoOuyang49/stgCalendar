@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "solar-term-calendar"
+version = "0.1.0"
+description = "Official-publication-first solar terms with provenance, explicit estimates and civil-clock pillars"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "HaoOuyang49" }]
+keywords = ["solar-terms", "calendar", "provenance", "chinese-calendar"]
+
+[project.optional-dependencies]
+calendar = ["lunar-python>=1.4.8,<2", "tzdata>=2024.1"]
+
+[project.urls]
+Homepage = "https://github.com/HaoOuyang49/solar-term-calendar"
+Issues = "https://github.com/HaoOuyang49/solar-term-calendar/issues"
+
+[project.scripts]
+solar-terms = "solar_term_calendar.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["solar_term_calendar*"]
+
+[tool.setuptools.package-data]
+solar_term_calendar = ["pmo_updates.json"]

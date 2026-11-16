@@ -1,0 +1,48 @@
+{
+  "extracted_on": "2026-11-15",
+  "origin_repository": "https://github.com/HaoOuyang49/MagicDoor-Engine",
+  "note": "Extracted from an in-progress local engine; no private textbook, test-review downloads, or third-party implementation copied.",
+  "modules": [
+    {
+      "module": "pmo_historical.py",
+      "original_sha256": "2656e425c31fd707c9001ee8dbb404b9158ca1902f81a589e31738eef3ab0dbc",
+      "origin": "MagicDoor-Engine/qimen_engine/pmo_historical.py"
+    },
+    {
+      "module": "pmo_terms.py",
+      "original_sha256": "4369c0ffced2e2ae5ab7a9b1352084649e2184e9faab1cdaba25eea4bed68b7f",
+      "origin": "MagicDoor-Engine/qimen_engine/pmo_terms.py"
+    },
+    {
+      "module": "hko_terms.py",
+      "original_sha256": "dbeaf05aa049feac6d98d7786f3d949ad9b3dd4a06ba3250de49299cf3a12a5a",
+      "origin": "MagicDoor-Engine/qimen_engine/hko_terms.py"
+    },
+    {
+      "module": "pmo_updates.json",
+      "original_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "origin": "MagicDoor-Engine/qimen_engine/pmo_updates.json"
+    },
+    {
+      "module": "provenance.py",
+      "original_sha256": "8f364dda290638d5db9635a390da8098491e240d15468e15566863ed10d1d253",
+      "origin": "MagicDoor-Engine/qimen_engine/provenance.py"
+    },
+    {
+      "module": "update_terms.py",
+      "original_sha256": "8e622ee41d3654450f97b84b126853aa5dc44566c09d9f85e87761e9ef9ecfde",
+      "origin": "MagicDoor-Engine/qimen_engine/update_terms.py"
+    },
+    {
+      "module": "windows.py",
+      "original_sha256": "d8bd1337a8a47315ca27f900b07878a74e13ddf4076a40fb48998f7e58664637",
+      "origin": "MagicDoor-Engine/qimen_engine/windows.py"
+    },
+    {
+      "module": "calendar.py",
+      "original_sha256": "7d4a39214514410954c7bb55ff6cc50e5257b300acf1fb200199eddeb3d274e3",
+      "origin": "MagicDoor-Engine/qimen_engine/calendar.py",
+      "extraction": "Time conversion, term selection, provenance and consent only; chart/ju logic excluded"
+    }
+  ]
+}

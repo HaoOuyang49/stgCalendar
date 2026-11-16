@@ -1,0 +1,31 @@
+name: 历法 / 数据问题
+description: 报告可复现的历法、节气资料或接口问题
+title: '[Bug] '
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 输入和复现步骤
+      description: 包含完整时间、UTC偏移或IANA时区，以及所用参数。
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际输出
+      description: 贴出相关JSON及provenance，避免只给日历截图。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果及依据
+      description: 如涉及公布值，请给官方链接、资料版次、页码或记录位置。
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 包版本、Python版本和term_data_version
+    validations:
+      required: true

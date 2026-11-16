@@ -1,0 +1,3 @@
+include LICENSE README.md DATA_SOURCES.md CONTRIBUTING.md
+recursive-include docs *.md *.json
+recursive-include tests *.py
