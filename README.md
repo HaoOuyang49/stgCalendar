@@ -99,10 +99,3 @@ python -m unittest discover -s tests -v
 
 报告问题请使用 [Issues](https://github.com/HaoOuyang49/stgCalendar/issues)，提供输入、时区、输出、版本及预期依据。
 修改代码或数据前请阅读[贡献指南](CONTRIBUTING.md)。
-
-## 项目来源与许可
-
-本项目从 MagicDoor 的在研历法模块独立抽取，使用 AI 辅助开发和整理；[提取记录](docs/extraction-provenance.json)列明原模块及指纹。
-日柱与相邻节气候选依赖 `lunar-python`，时区资料来自系统或 `tzdata`。
-
-原创代码与原创说明采用 [MIT 许可证](LICENSE)；来源出版物和第三方组件保留各自的权利与条款，详见[数据来源](DATA_SOURCES.md)。
