@@ -1,4 +1,4 @@
-"""Public calendar APIs, independent of charts, readings and private textbooks."""
+"""Public APIs for solar terms and civil-clock Ganzhi conversion."""
 
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo

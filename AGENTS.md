@@ -1,6 +1,6 @@
 # stgCalendar
 
-独立历法与节气库，来自 MagicDoor 的历法模块；不得依赖 qimen_engine 或私有教材。
+stgCalendar 是独立的节气与干支历法 Python 库，代码、数据、测试和发布配置均在本仓库维护。
 先阅读 README.md、DATA_SOURCES.md 和测试。原创代码采用 MIT，来源出版物与依赖各保留原有条款。
 
 - 官方优先：紫金山 > 香港天文台 > 用户明确允许的 lunar-python 估算。
